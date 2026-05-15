@@ -81,7 +81,7 @@ export default defineConfig(async () => {
 			// This is an OSS project, so it's fine to generate "regular" sourcemaps.
 			// If we ever want sourcemaps upload without exposing them publicly, switch
 			// to `sourcemap: 'hidden'` (and keep uploading to Sentry).
-			sourcemap: true,
+			sourcemap: false,
 			cssMinify: MODE === 'production',
 			rollupOptions: {
 				external: [/node:.*/, 'stream', 'crypto'],

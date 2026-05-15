@@ -12,3 +12,4 @@ videos/*.mp4
 .vercel
 videos/
 music/
+services/site/public/videos/

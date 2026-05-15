@@ -27,7 +27,7 @@
     "postinstall": "prisma generate --schema ./prisma/schema.prisma",
     "clean": "rimraf ../../node_modules/.cache ./server/dist ./build ./public/build",
     "prebuild": "npm run clean && echo All clean ✨",
-    "build": "run-s build:*",
+    "build": "vite build",
     "build:router": "vite build --sourcemap && vite build --ssr --sourcemap",
     "build:server": "node ../../other/build-server.ts",
     "build:info": "node ../../other/generate-build-info.ts",

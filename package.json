@@ -1,0 +1,64 @@
+{
+  "name": "AbhiDev Workspace",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": "24",
+    "npm": ">=10"
+  },
+  "imports": {
+    "#app/*": "./services/site/app/*",
+    "#other/*": "./other/*",
+    "#tests/*": "./services/site/tests/*"
+  },
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace site",
+    "start": "npm run start --workspace site",
+    "start:mocks": "npm run start:mocks --workspace site",
+    "prepare": "husky",
+    "build": "npm run build --workspace site",
+    "build:all": "nx run-many -t build",
+    "predeploy:healthcheck": "npm run predeploy:healthcheck --workspace site",
+    "prime-cache:prod": "npm run prime-cache:prod --workspace site",
+    "prime-cache:mocks": "npm run prime-cache:mocks --workspace site",
+    "test": "npm run test --workspace site",
+    "test:all": "nx run-many -t test",
+    "test:backend": "npm run test:backend --workspace site",
+    "test:backend:watch": "npm run test:backend:watch --workspace site",
+    "test:browser": "npm run test:browser --workspace site",
+    "test:browser:watch": "npm run test:browser:watch --workspace site",
+    "test:e2e:dev": "npm run test:e2e:dev --workspace site",
+    "test:e2e:run": "npm run test:e2e:run --workspace site",
+    "test:e2e:install": "npm run test:e2e:install --workspace site",
+    "lint": "npm run lint --workspace site",
+    "lint:all": "nx run-many -t lint",
+    "format": "npm run format --workspace site",
+    "format:staged": "lint-staged",
+    "typecheck": "npm run typecheck --workspace site",
+    "typecheck:all": "nx run-many -t typecheck",
+    "precommit:verify": "npm run format:staged && npm run lint:all && npm run typecheck:all && npm run build:all",
+    "prepush:verify": "npm run test:all",
+    "validate": "npm run validate --workspace site",
+    "setup": "npm install && npm run setup --workspace site",
+    "nx:graph": "nx graph"
+  },
+  "devDependencies": {
+    "@epic-web/config": "^2.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "nx": "^22.5.4",
+    "prettier": "^3.8.1",
+    "react-router": "^7.14.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@react-router/dev": "^7.14.1",
+    "@react-router/express": "^7.14.1",
+    "@react-router/node": "^7.14.1",
+    "react-router-dom": "^7.14.1"
+  }
+}

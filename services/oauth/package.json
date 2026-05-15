@@ -1,0 +1,32 @@
+{
+  "name": "oauth",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "oxlint . --ignore-pattern worker-configuration.d.ts --ignore-pattern .wrangler",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --env local",
+    "start": "wrangler dev --env local",
+    "cf-typegen": "wrangler types"
+  },
+  "keywords": [],
+  "author": "AbhiDev <me@abhidev.com> (https://abhidev.com/)",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "^0.3.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@epic-web/config": "^2.0.0",
+    "oxlint": "^1.51.0",
+    "prettier": "^3.8.1",
+    "typescript": "^6.0.2",
+    "wrangler": "^4.80.0"
+  },
+  "prettier": "@epic-web/config/prettier"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@abhidev/search-shared",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/search-shared.ts"
+  },
+  "scripts": {
+    "lint": "oxlint src",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@epic-web/config": "^2.0.0",
+    "oxlint": "^1.51.0",
+    "typescript": "^6.0.2"
+  },
+  "prettier": "@epic-web/config/prettier"
+}

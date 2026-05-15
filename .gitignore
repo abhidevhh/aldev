@@ -10,3 +10,5 @@ coverage
 
 videos/*.mp4
 .vercel
+videos/
+music/
